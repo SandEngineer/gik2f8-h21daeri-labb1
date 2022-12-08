@@ -25,15 +25,21 @@ function renderBookList(bookList) {
     BookList(bookList);
 
     const existingElement = document.querySelector('.book-list');
-    const root = document.getElementById('root');
+    const search = document.getElementById('search');
     
     existingElement && root.removeChild(existingElement);
-    bookList.length > 0 && searchField.value && root.insertAdjacentHTML('beforeend', BookList(bookList))
+    bookList.length > 0 && searchField.value && search.insertAdjacentHTML('beforeend', BookList(bookList))
 }
 
-console.log(bookList);
+function tooltipShow() {
+    const mc = document.getElementById('mainContainer');
 
-function renderTooltip() {
+    mc.insertAdjacentHTML('beforeend', Tooltip(bookList))
+}
 
+function tooltipHide() {
+    const mc = document.getElementById('mainContainer');
+    const tooltip = document.querySelector('.tooltip');
 
+    mc.removeChild(tooltip)
 }
