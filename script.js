@@ -31,6 +31,8 @@ function renderBookList(bookList) {
     bookList.length > 0 && searchField.value && search.insertAdjacentHTML('beforeend', BookList(bookList))
 }
 
+/* getOne(2).then(tooltipShow); */
+
 function tooltipShow() {
     const mc = document.getElementById('mainContainer');
 
