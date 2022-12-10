@@ -27,18 +27,21 @@ function renderBookList(bookList) {
     const existingElement = document.querySelector('.book-list');
     const search = document.getElementById('search');
     
-    existingElement && root.removeChild(existingElement);
+    existingElement && search.removeChild(existingElement);
     bookList.length > 0 && searchField.value && search.insertAdjacentHTML('beforeend', BookList(bookList))
 }
 
-/* getOne(2).then(tooltipShow); */
-
-function tooltipShow() {
-    const mc = document.getElementById('mainContainer');
-
-    mc.insertAdjacentHTML('beforeend', Tooltip(bookList))
+/* Visar inforuta med relevant info vid mouseover av listelement
+Info hämtas via elementets id med getOne*/
+function tooltipShow(elem) {
+    getOne(elem.id).then(e => {
+        const mc = document.getElementById('mainContainer');
+        console.log (e)
+        mc.insertAdjacentHTML('beforeend', Tooltip(e))
+    })
 }
 
+/* Döljer inforuta när musen lämnar listelement */
 function tooltipHide() {
     const mc = document.getElementById('mainContainer');
     const tooltip = document.querySelector('.tooltip');

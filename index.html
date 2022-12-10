@@ -14,20 +14,22 @@
     <h1 class="text-center text-7xl text-slate-700 mt-8 mb-6">
         Sök böcker
     </h1>
-
     <main class="flex flex-col justify-center align-center w-5/6 md:w-3/5 mx-auto bg-white/50 px-6 py-12 rounded gap-2"
-    id="root">
+          id="root">
         <label class="block text-center text-2xl text-slate-900"
-            for="searchField">
+               for="searchField">
             Vad letar du efter?
         </label>
+<!-- VARNING FÖR SCUFFED DIV-STRUKTUR för layoutsyfte-->
+        <!-- Container för tooltip och sökmotor-->
         <div class="flex justify-center align-center w-full md:w-full gap-2"
-        id="mainContainer">
-            <div class="flex flex-col justify-center align-center w-full md:w-full gap-2"
+             id="mainContainer">
+            <!-- Container för sökfält och lista -->
+            <div class="flex flex-col w-full md:full gap-2"
                  id="search">
                 <input class="rounded-lg p-2"
-                id="searchField"
-                type="text" />
+                       id="searchField"
+                       type="text" />
             </div>
         </div>
     </main>
